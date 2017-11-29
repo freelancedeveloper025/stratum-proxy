@@ -1,0 +1,21 @@
+{
+  "name": "stratum-controll",
+  "version": "1.0.0",
+  "description": "Controlling Stratum Proxy",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "child_process": "1.0.2",
+    "dot-emc": "~0.1.2",
+    "express": "^4.13.3",
+    "fs": "0.0.1-security",
+    "rand-token": "^0.4.0",
+    "stratum-proxy-any": "1.0.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "npm install pm2 -g"
+  },
+  "author": "Md. Forhad Shamim",
+  "license": "ISC"
+}

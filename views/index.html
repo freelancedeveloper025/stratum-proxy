@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["lport"].value;
+    if (x == "") {
+        alert("Local Port must be filled out");
+        return false;
+    }
+	
+	var x = document.forms["myForm"]["host"].value;
+    if (x == "") {
+        alert("Pool Host must be filled out");
+        return false;
+    }
+	
+	var x = document.forms["myForm"]["port"].value;
+    if (x == "") {
+        alert("Pool Port must be filled out");
+        return false;
+    }
+	
+	var x = document.forms["myForm"]["worker"].value;
+    if (x == "") {
+        alert("Workar Name must be filled out");
+        return false;
+    }
+	
+	var x = document.forms["myForm"]["address"].value;
+    if (x == "") {
+        alert("receive Address must be filled out");
+        return false;
+    }
+} 
+</script>
+</head>
+<body>
+
+<form name="myForm" action="/" method="post" onsubmit="return validateForm()">
+  Local Port:<br>
+  <input type="text" name="lport" value="7894" readonly> //7894 is assign for you 
+  <br>
+  Remote Host:<br>
+  <input type="text" name="host" placeholder="pool.example.com" >
+  <br>
+  Remote Port:<br>
+  <input type="text" name="port" placeholder="3333" >
+  <br>
+  Your Require Workar Name:<br>
+  <input type="text" name="worker" placeholder="boss" >
+  <br>
+  Your Require receive Address:<br>
+  <input type="text" name="address" placeholder="0x2204c3E801541165BcC8A5138bcE4CD49b2ccc29" >
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<a href='/start'>Start Service</a><br>
+<a href='/restart'>Re-Start Service</a>
+
+<hr>
+<h1>Example Miner Config:</h1>
+<p>
+qtminer -s stratum+tcp://192.250.230.216:7894 -u forhadshamim -G
+<br>
+EthDcrMiner64 -epool stratum+tcp://192.250.230.216:7894 -eworker forhadshamim -ewal user.rcvaddress
+</p>
+</body>
+</html>
